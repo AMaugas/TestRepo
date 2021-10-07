@@ -1,6 +1,8 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+echo ""
 echo "Starting code formatter"
 Formatter.exe -d . -r -config .\\.husky\\Formatter.config -e UTF-8
 echo "Code formatted before commit"
+echo ""

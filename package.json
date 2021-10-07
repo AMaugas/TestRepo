@@ -14,11 +14,20 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "config": {
+    "commitizen":{
+        "path": "@commitlint/cz-commitlint"
+    }
+  },
   "bugs": {
     "url": "https://github.com/AMaugas/TestRepo/issues"
   },
   "homepage": "https://github.com/AMaugas/TestRepo#readme",
   "devDependencies": {
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
+    "@commitlint/cz-commitlint": "^13.2.0",
+    "commitizen": "^4.2.4",
     "husky": "^7.0.2"
   }
 }
