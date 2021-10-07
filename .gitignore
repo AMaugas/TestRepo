@@ -49,6 +49,7 @@ Tests/dunitx-results.xml
 # IDEs Folders #
 ################
 /.vscode
+node_modules/
 
 
 *.lnk
