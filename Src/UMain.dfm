@@ -45,6 +45,5 @@ object Form3: TForm3
     ParentFont = False
     TabOrder = 0
     OnClick = Button1Click
-    ExplicitTop = 238
   end
 end
