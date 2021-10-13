@@ -10,4 +10,4 @@ SET LANGDIR=FR
 SET PLATFORM=
 SET PlatformSDK=
 
-MSBuild /t:Build /p:config="Release" .\UnitTests.dproj
+MSBuild .\UnitTests.dproj /t:Build /p:config="Release"
