@@ -5,24 +5,41 @@
 {$ENDIF}
 {$STRONGLINKTYPES ON}
 
-uses System.SysUtils,
+uses
+  System.SysUtils,
+
 {$IFDEF TESTINSIGHT}
+
   TestInsight.DUnitX,
+
 {$ELSE}
-  DUnitX.Loggers.Console, DUnitX.Loggers.Xml.NUnit,
+
+  DUnitX.Loggers.Console,
+  DUnitX.Loggers.Xml.NUnit,
+
 {$ENDIF }
-  DUnitX.TestFramework, UMainFormTest in 'UMainFormTest.pas';
+
+  DUnitX.TestFramework,
+  UMainFormTest in 'UMainFormTest.pas';
 
 {$IFNDEF TESTINSIGHT}
 
-var runner: ITestRunner; results: IRunResults; logger: ITestLogger;
+var
+  runner: ITestRunner;
+  results: IRunResults;
+  logger: ITestLogger;
   nunitLogger: ITestLogger;
+
 {$ENDIF}
 
 begin
+
 {$IFDEF TESTINSIGHT}
+
   TestInsight.DUnitX.RunRegisteredTests;
+
 {$ELSE}
+
   try
     // Check command line options, will exit if invalid
     TDUnitX.CheckCommandLine;
@@ -50,15 +67,19 @@ begin
     if not results.AllPassed then System.ExitCode := EXIT_ERRORS;
 
 {$IFNDEF CI}
+
     // We don't want this happening when running under CI.
     if TDUnitX.Options.ExitBehavior = TDUnitXExitBehavior.Pause then begin
       System.Write('Done.. press <Enter> key to quit.');
       System.Readln;
     end;
+
 {$ENDIF}
+
   except
     on E: Exception do System.Writeln(E.ClassName, ': ', E.Message);
   end;
+
 {$ENDIF}
 
 end.

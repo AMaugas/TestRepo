@@ -1,0 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+
+./Tests/build.bat
+
+./Tests/Win32/Release/UnitTests.exe
+
+[ $? -eq 0 ] && echo "All unit tests passed." || exit 1
