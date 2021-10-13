@@ -1,4 +1,4 @@
-﻿unit UMain;
+unit UMain;
 
 interface
 
@@ -25,7 +25,8 @@ implementation
 
 procedure TForm3.Button1Click(Sender: TObject);
 begin
-  Label1.Caption := 'Allo ?';
+  Label1.Caption := 'Hello';
 end;
 
 end.
+>>>>>>> origin/main
