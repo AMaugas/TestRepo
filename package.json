@@ -15,8 +15,8 @@
   "author": "",
   "license": "ISC",
   "config": {
-    "commitizen":{
-        "path": "@commitlint/cz-commitlint"
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
     }
   },
   "bugs": {

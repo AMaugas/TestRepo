@@ -25,7 +25,7 @@ implementation
 
 procedure TForm3.Button1Click(Sender: TObject);
 begin
-  Label1.Caption := 'Hi my friend !';
+  Label1.Caption := 'Allo ?';
 end;
 
 end.

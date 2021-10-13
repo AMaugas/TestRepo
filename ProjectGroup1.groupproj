@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B034CCB9-9667-4BAA-8BC7-50B5E2F0D8B4}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TestProject.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Tests\UnitTests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TestProject">
+        <MSBuild Projects="TestProject.dproj"/>
+    </Target>
+    <Target Name="TestProject:Clean">
+        <MSBuild Projects="TestProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestProject:Make">
+        <MSBuild Projects="TestProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="UnitTests">
+        <MSBuild Projects="Tests\UnitTests.dproj"/>
+    </Target>
+    <Target Name="UnitTests:Clean">
+        <MSBuild Projects="Tests\UnitTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="UnitTests:Make">
+        <MSBuild Projects="Tests\UnitTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TestProject;UnitTests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TestProject:Clean;UnitTests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TestProject:Make;UnitTests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
