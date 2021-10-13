@@ -1,4 +1,4 @@
-unit UMain;
+﻿unit UMain;
 
 interface
 
@@ -29,4 +29,3 @@ begin
 end;
 
 end.
->>>>>>> origin/main
