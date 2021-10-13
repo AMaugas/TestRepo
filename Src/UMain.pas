@@ -1,4 +1,4 @@
-unit UMain;
+﻿unit UMain;
 
 interface
 
@@ -28,5 +28,4 @@ begin
   Label1.Caption := 'Hello';
 end;
 
-end.
->>>>>>> origin/main
+end. > > > > > >> origin / main
