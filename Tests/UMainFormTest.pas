@@ -38,7 +38,7 @@ end;
 procedure TMainFormTest.Test1;
 begin
 
-//   assert.AreEqual(0, 1);
+  // assert.AreEqual(0, 1);
 end;
 
 procedure TMainFormTest.Test2(const AValue1: Integer; const AValue2: Integer);

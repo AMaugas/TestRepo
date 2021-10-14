@@ -9,7 +9,4 @@
     ./Tests/Win32/Release/UnitTests.exe -b -cm:Quiet -l:Error
 
     [ $? -eq 0 ] && echo "All unit tests passed." || exit 1
-|| \
-    echo "Not on a branch where unit tests are required" \\
-
- exit 1
+|| echo "Not on a branch where unit tests are required"
