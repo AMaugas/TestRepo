@@ -8,3 +8,4 @@
 
     ./Tests/Win32/Release/UnitTests.exe -b -cm:Quiet -l:Error \
 || echo "Not on a branch where unit tests are required"
+npx --no-install validate-branch-name
